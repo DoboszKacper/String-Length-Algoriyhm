@@ -11,7 +11,7 @@ public class Main {
         String steam1 = "go1";
         String stream2 = "go2";
         int pop = 0;
-        int poprzedni = 0;
+        int previous = 0;
 
 
         File file = new File(path);
@@ -20,12 +20,12 @@ public class Main {
             while (sc.hasNext()) {
                 String curent = sc.next();
                 if (steam1 == "go1") {//First step
-                    poprzedni = Integer.valueOf(curent);
-                    descending = String.valueOf(poprzedni);
+                    previous = Integer.valueOf(curent);
+                    descending = String.valueOf(previous);
                     steam1 = null;
                 } else {//Next step
-                    if (poprzedni >= Integer.valueOf(curent)) {//Jezeli element ciagu jest mniejszy od porzedniego
-                        poprzedni = Integer.valueOf(curent);
+                    if (previous >= Integer.valueOf(curent)) {
+                        previous = Integer.valueOf(curent);
 
 
                         //Descending
@@ -39,8 +39,8 @@ public class Main {
                             descendingCompare = descending;
                         }
                     }
-                    if (poprzedni < Integer.valueOf(curent)) {
-                        poprzedni = Integer.valueOf(curent);
+                    if (previous < Integer.valueOf(curent)) {
+                        previous = Integer.valueOf(curent);
 
                         //Descending
                         if (descendingCompare == null) {
@@ -112,6 +112,6 @@ public class Main {
 
 
     public static void main(String[] args) {
-        System.out.println(read("Dane.txt"));
+        System.out.println(read("file.txt"));
     }
 }
